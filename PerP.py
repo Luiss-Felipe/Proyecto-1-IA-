@@ -14,7 +14,7 @@ import tkinter as tk
 import random
 from tkinter import messagebox
 
-#hola
+#///////////////////////////////////////////////////////////////
 
 
 #  imprimir el tablero en pantalla  
