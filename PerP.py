@@ -14,8 +14,7 @@ import tkinter as tk
 import random
 from tkinter import messagebox
 
-#///////////////////////////////////////////////////////
-
+#/////////////////////////////////////////////////1314
 #Comienzo del programa
 
 #  imprimir el tablero del gato 4x4 en pantalla  
