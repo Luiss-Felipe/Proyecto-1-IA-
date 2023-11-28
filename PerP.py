@@ -15,7 +15,7 @@ import random
 from tkinter import messagebox
 
 #///////////////////////////////////////////////////////////////
-
+#Comienzo del programa
 
 #  imprimir el tablero del gato 4x4 en pantalla  
 def Juego(board):
@@ -94,7 +94,7 @@ def best_move(board):
     for current_move in moves:
         new_board = [row[:] for row in board]
         new_board[current_move[0]][current_move[1]] = 'X'
-        eval = minimax(new_board, 3, False, -math.inf, math.inf)
+        eval = minimax(new_board, 4, False, -math.inf, math.inf)
         if eval > max_eval:
             max_eval = eval
             best_move = current_move
