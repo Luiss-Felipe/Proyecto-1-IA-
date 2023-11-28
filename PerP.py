@@ -6,7 +6,7 @@
 #Irving Rodriguez Rodriguez.
 #Raúl Alejandro Moreno Camargo.
 
-# Version 2.0
+# Version 2.0.1
 
 # Librerias utilizadas para la implementacion del juego gato 
 import math
@@ -17,7 +17,7 @@ from tkinter import messagebox
 #///////////////////////////////////////////////////////////////
 
 
-#  imprimir el tablero en pantalla  
+#  imprimir el tablero del gato 4x4 en pantalla  
 def Juego(board):
     for row in board:
         print(" | ".join(row))
@@ -113,11 +113,11 @@ def cell_click(board_buttons, board, row, col, player_label):
         winner = evaluate(board)
         if winner is not None:
             if winner == 1:
-                messagebox.showinfo("Felicidades has ganado")
+                messagebox.showinfo("Felicitaciones","¡ganaste amigo!")
             elif winner == -1:
-                messagebox.showinfo("Has perdido amigo")
+                messagebox.showinfo("Lo lamento","Has perdido amigo :( ")
             else:
-                messagebox.showinfo("Empate", "Empate.")
+                messagebox.showinfo("Vaya", "Has empatado con la IA")
             root.quit()
         else:
             move = best_move(board)
@@ -128,9 +128,9 @@ def cell_click(board_buttons, board, row, col, player_label):
                 if winner == 1:
                     messagebox.showinfo("¡Ganaste!", "¡Ganaste!")
                 elif winner == -1:
-                    messagebox.showinfo("¡Perdiste!", "¡Perdiste!")
+                    messagebox.showinfo("Lo lamento","Has perdido amigo :( ")
                 else:
-                    messagebox.showinfo("Empate", "Empate.")
+                    messagebox.showinfo("Vaya", "Has empatado con la IA")
                 root.quit()
                 
  # Crear la ventana principal
@@ -140,13 +140,13 @@ root.title("Proyecto Primer Parcial")
 # Establecer el tamaño de los botones
 button_size = 100
 
-# Crear botones del tablero
+# Creacion de botones de la interfaz del juego
 board_buttons = [[tk.Button(root, text=' ', font=('Arial', 24), width=6, height=3,
                            command=lambda i=i, j=j: cell_click(board_buttons, board, i, j, player_label),
                            bg='#D7FCB8', fg='#FF3B33') 
                  for j in range(4)] for i in range(4)]
 
-# Posicionar los botones en la ventana
+# Configuracion del posicionamiento de  los botones en la ventana
 for i in range(4):
     for j in range(4):
         board_buttons[i][j].grid(row=i+1, column=j, padx=5, pady=5)
